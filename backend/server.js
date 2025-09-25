@@ -12,7 +12,8 @@ app.use((req, res, next) => {
 });
 
 // MongoDB Atlas connection
-const uri = "mongodb+srv://sbingham:Nephi0718@cluster0.pj2ittj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+require('dotenv').config();
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
